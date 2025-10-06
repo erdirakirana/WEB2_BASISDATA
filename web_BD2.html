@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Buat Video & Post Blog - DBMS dan ERD</title>
+  <style>
+    :root {
+      --card-bg: rgba(255, 255, 255, 0.95);
+      --accent: #0f172a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color: var(--accent);
+    }
+
+    /* Background gradiasi biru */
+    body {
+      background: linear-gradient(180deg, #07123a 0%, #0b3b8a 50%, #6aa0ff 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 920px;
+      padding: 28px;
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+      box-shadow: 0 8px 30px rgba(2, 6, 23, 0.6);
+      backdrop-filter: blur(6px);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #0ea5e9, #0369a1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    p.lead {
+      margin: 6px 0 0 0;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 22px;
+      border-radius: 12px;
+      margin-top: 12px;
+    }
+
+    ul.tasks {
+      list-style: disc;
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .task {
+      margin: 18px 0;
+    }
+
+    /* Accordion */
+    .post-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(15, 23, 42, 0.04);
+      background: linear-gradient(180deg, rgba(10, 23, 55, 0.02), rgba(255, 255, 255, 0.02));
+    }
+
+    .post-content {
+      padding: 12px 12px 0 12px;
+      display: none;
+    }
+
+    .post-open .post-content {
+      display: block;
+    }
+
+    .meta {
+      font-size: 13px;
+      color: #475569;
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        padding: 18px;
+      }
+      .logo {
+        width: 48px;
+        height: 48px;
+      }
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 8px;
+      background: #0b61d6;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .embed-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .embed-wrap iframe {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">BD</div>
+      <div>
+        <h1>BASIS DATA</h1>
+        <p class="lead">Ringkasan tugas: buat panduan instalasi MySQL dan penjelasan ERD (atribut, entitas, relasi).</p>
+      </div>
+    </header>
+
+    <div class="card">
+      <ul class="tasks">
+        <li class="task">
+          <div class="post-title" data-target="post1">
+            <div>
+              <strong>Post 1</strong> : Buat tatacara instalasi 1 DBMS (MySQL)
+              <div class="meta">Output: Video tutorial singkat & tulisan langkah instalasi</div>
+            </div>
+            <div><span class="toggle">▶</span></div>
+          </div>
+          <div id="post1" class="post-content">
+            <h3>Deskripsi singkat</h3>
+            <p>Dalam posting ini sertakan langkah-langkah instalasi MySQL pada Windows / Linux, contoh konfigurasi awal, dan membuat user berserta password.</p>
+
+            <h4>struktur konten:</h4>
+            <ol>
+              <li>Persiapan (unduh installer, cek dependensi)</li>
+              <li>Instalasi langkah demi langkah</li>
+              <li>Konfigurasi awal (root password, port)</li>
+            </ol>
+ <h4>Video (Tutorial Meng-install MySQL)</h4>
+    <div class="embed-wrap">
+      <iframe 
+        src="https://www.youtube.com/embed/JoGaWSSYvGY" 
+        title="Cara Instalasi MySQL DBMS di Windows" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+
+          </div>
+        </li>
+
+        <li class="task">
+          <div class="post-title" data-target="post2">
+            <div>
+              <strong>Post 2</strong> : Apa itu attribute, entitas dan relasi dalam ERD
+              <div class="meta">Output: Post blog edukatif + contoh ERD sederhana</div>
+            </div>
+            <div><span class="toggle">▶</span></div>
+          </div>
+          <div id="post2" class="post-content">
+            <h3>Penjelasan singkat</h3>
+            <p><strong>Entitas</strong> adalah objek nyata atau konsep yang memiliki data (contoh: Mahasiswa, MataKuliah).<br>
+            <strong>Atribut</strong> adalah properti yang mendeskripsikan entitas (contoh: NIM, Nama, Alamat).<br>
+            <strong>Relasi</strong> menggambarkan hubungan antara entitas (contoh: Mahasiswa <em>mengambil</em> MataKuliah).</p>
+
+            <h4>Contoh ERD sederhana</h4>
+            <p>Entitas: Mahasiswa (NIM PK, Nama, Email), MataKuliah (Kode PK, NamaMK, SKS). Relasi: Mahasiswa —<em>Mengambil</em>— MataKuliah (many-to-many) dengan tabel penghubung KRS (NIM FK, Kode FK, Semester).</p>
+
+          </div>
+        </li>
+      </ul>
+
+      <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+        <a class="btn" href="#" onclick="openAll(true);return false">Buka Semua</a>
+        <a class="btn" href="#" style="background:#1456c9" onclick="openAll(false);return false">Tutup Semua</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.post-title').forEach(el => {
+      el.addEventListener('click', () => {
+        const target = document.getElementById(el.dataset.target);
+        const parent = el.parentElement;
+        parent.classList.toggle('post-open');
+
+        const arrow = el.querySelector('.toggle');
+        if (parent.classList.contains('post-open')) {
+          arrow.textContent = '▼';
+        } else {
+          arrow.textContent = '▶';
+        }
+      });
+    });
+
+    function openAll(open) {
+      document.querySelectorAll('.task').forEach(task => {
+        if (open) task.classList.add('post-open');
+        else task.classList.remove('post-open');
+
+        const arrow = task.querySelector('.toggle');
+        if (arrow) arrow.textContent = open ? '▼' : '▶';
+      });
+    }
+  </script>
+</body>
+</html>
